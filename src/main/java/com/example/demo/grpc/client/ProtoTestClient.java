@@ -18,9 +18,8 @@ public class ProtoTestClient {
 		TextServiceGrpc.TextServiceBlockingStub blockingStub = TextServiceGrpc.newBlockingStub(channel);
 		
 		System.out.println("gRPC client connected to gRPC server");
-		
 		TextMessage textMsg = TextMessage.newBuilder()
-										.setText("World")
+										.setText("World gRPC KTJ!")
 										.build();
 		
 		TextRequest request = TextRequest.newBuilder()
