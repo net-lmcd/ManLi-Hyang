@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.TestDao">
+
+    <!-- Insert Test -->
+    <insert id= "InsertTest" parameterType="com.example.demo.dto.TestDto">
+      INSERT INTO Test (id, user_id, pw, img_url) values (${id}, #{user_id}, #{pw}, #{img_url})
+    </insert>
+
+    <!-- Read Test -->
+    <select id ="TestList" resultType="com.example.demo.dto.TestDto">
+   		Select * from Test;
+   	</select>
+
+</mapper>

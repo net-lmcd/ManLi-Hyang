@@ -7,7 +7,7 @@ import io.grpc.ManagedChannelBuilder;
 public class UserTestClient {
 
     public static void main(String[] args) {
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8888)
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("127.0.0.1", 8888)
                 .usePlaintext()
                 .build();
 
@@ -15,7 +15,7 @@ public class UserTestClient {
 
         System.out.println("gRPC client connected to gRPC server");
         UserMessage userMsg = UserMessage.newBuilder()
-                .setId(1)
+                .setId(2)
                 .setUserId("xowns9418")
                 .setPw("9418")
                 .setImageUrl("http://image")
@@ -24,6 +24,7 @@ public class UserTestClient {
         UserRequest request = UserRequest.newBuilder()
                 .setReqTextMsg(userMsg)
                 .build();
+
 
         UserResponse response = blockingStub.userTest(request);
 
